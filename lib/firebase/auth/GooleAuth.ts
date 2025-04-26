@@ -1,5 +1,5 @@
 //lib/firebase/auth/GoogleAuth.ts
-import { type User, GoogleAuthProvider, signInWithPopup, signOut as firebaseSignOut } from 'firebase/auth';
+import {GoogleAuthProvider, signInWithPopup, signOut as firebaseSignOut } from 'firebase/auth';
 import { auth } from '../client-config';
 
 

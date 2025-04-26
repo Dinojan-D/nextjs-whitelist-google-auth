@@ -1,9 +1,11 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import { homeRoute,loginRoute,sessionConsts,protectedRoutes } from './private.consts';
+import { decrypt } from './lib/signSession';
 
+export default async function middleware(request: NextRequest) {
+  const cryptedCookies = request.cookies.get(sessionConsts.cookiesName)?.value || '';
+  const session = await decrypt(cryptedCookies)
 
-export default  function middleware(request: NextRequest) {
-  const session = request.cookies.get(sessionConsts.cookiesName)?.value || '';
 
   // redirect to login if not session
   if (!session && protectedRoutes.includes(request.nextUrl.pathname)) {

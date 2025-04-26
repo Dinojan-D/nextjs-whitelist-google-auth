@@ -7,7 +7,7 @@ This project is an authentication system built with Next.js, using Firebase Auth
 Before running the project, install the required dependencies:
 
 ```sh
-npm install firebase firebase-admin server-only
+npm install firebase firebase-admin server-only jose
 ```
 
 ## Firebase Configuration
